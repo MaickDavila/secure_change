@@ -4,3 +4,22 @@ body {
     font-family: 'Rubik', sans-serif;
     @apply w-full h-screen bg-gradient-to-b from-[#4A28AF] to-[#6E46E6] text-white;
 }
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(150deg);
+    }
+}
+
+@keyframes spinBack {
+    from {
+        transform: rotate(150deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}

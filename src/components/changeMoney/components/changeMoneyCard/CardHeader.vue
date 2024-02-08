@@ -11,7 +11,7 @@ const { changeAction, get_action } = useChangeAction();
 
 <template>
   <div class="tab">
-    <div class="item" @click="changeAction()">
+    <div class="item" @click="changeAction(EChangeAction.SALE)">
       <div class="flex flex-col items-center justify-center text-center">
         <div :class="{ 'tab-active': get_action === EChangeAction.PURCHASE }">
           <p>Dólar compra</p>
@@ -20,7 +20,7 @@ const { changeAction, get_action } = useChangeAction();
       </div>
     </div>
 
-    <div class="item" @click="changeAction()">
+    <div class="item" @click="changeAction(EChangeAction.PURCHASE)">
       <div class="flex flex-col items-center justify-center text-center">
         <div :class="{ 'tab-active': get_action === EChangeAction.SALE }">
           <p>Dólar venta</p>

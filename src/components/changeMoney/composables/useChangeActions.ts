@@ -8,8 +8,27 @@ export function useChangeAction() {
     set: (value: EChangeAction) => changeFormStore.setAction(value),
   });
 
-  function changeAction() {
-    const action = changeFormStore.get_action();
+  const sendLabelText = computed(() => {
+    return get_action.value === EChangeAction.PURCHASE ? "Dólares" : "Soles";
+  });
+
+  const receiveLabelText = computed(() => {
+    return get_action.value === EChangeAction.PURCHASE ? "Soles" : "Dólares";
+  });
+
+  const getSendSimbol = computed(() => {
+    return get_action.value === EChangeAction.PURCHASE ? "$" : "S/";
+  });
+
+  const getReceiveSimbol = computed(() => {
+    return get_action.value === EChangeAction.PURCHASE ? "S/" : "$";
+  });
+
+  function changeAction(action: EChangeAction | null): void {
+    if (!action) {
+      action = get_action.value;
+    }
+
     if (action === EChangeAction.PURCHASE) {
       changeFormStore.setAction(EChangeAction.SALE);
     } else {
@@ -17,5 +36,12 @@ export function useChangeAction() {
     }
   }
 
-  return { get_action, changeAction };
+  return {
+    get_action,
+    sendLabelText,
+    receiveLabelText,
+    getSendSimbol,
+    getReceiveSimbol,
+    changeAction,
+  };
 }
