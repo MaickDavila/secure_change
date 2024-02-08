@@ -1,6 +1,6 @@
 import { computed } from "vue";
-import { EChangeAction } from "@/types/changeForm.types.js";
-import changeFormStore from "@/components/changeMoney/changeMoney.store.js";
+import { EChangeAction } from "@/types/changeForm.types";
+import changeFormStore from "@/components/changeMoney/changeMoney.store";
 
 export default function useChangeAction() {
   const get_action = computed({
@@ -24,7 +24,7 @@ export default function useChangeAction() {
     return get_action.value === EChangeAction.PURCHASE ? "S/" : "$";
   });
 
-  function changeAction(action: EChangeAction | null): void {
+  function changeAction(action: EChangeAction | null = null): void {
     if (!action) {
       action = get_action.value;
     }
