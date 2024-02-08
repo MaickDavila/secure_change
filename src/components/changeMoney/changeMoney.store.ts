@@ -17,7 +17,7 @@ const getters = {
 };
 
 const mutations = {
-  setCurrentCurrency: (currency: EChangeAction) => (state.action = currency),
+  setAction: (currency: EChangeAction) => (state.action = currency),
   setPurchasePrice: (price: number) => (state.purchase_price = price),
   setSalePrice: (price: number) => (state.sale_price = price),
 };

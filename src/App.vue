@@ -1,6 +1,12 @@
 <script setup lang="ts">
-import ChangeMoneyCard from "./components/changeMoney/changeMoneyCard.vue";
-import ChangeMoneyTitle from "./components/changeMoney/changeMoneyTitle.vue";
+import ChangeMoneyCard from "./components/changeMoney/components/changeMoneyCard/changeMoneyCard.vue";
+import ChangeMoneyTitle from "./components/changeMoney/components/changeMoneyTitle.vue";
+import { onMounted } from "vue";
+import { getRatesTest } from "@/components/changeMoney/actions/getRates.ts";
+
+onMounted(async () => {
+  await getRatesTest();
+});
 </script>
 
 <template>
