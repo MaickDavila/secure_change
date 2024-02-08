@@ -19,12 +19,20 @@ export const getRates = async () => {
     const collection_name = "rates";
     const docId = "awaOMswZ8JGxjmHCpVZ4";
 
-    const doc = await db.collection(collection_name).doc(docId).get();
-    const data = doc.data();
-    if (!data) return;
+    db.collection(collection_name)
+      .doc(docId)
+      .onSnapshot(
+        (doc) => {
+          const data = doc.data();
+          if (!data) return;
 
-    changeMoneyStore.setSalePrice(data.salePrice);
-    changeMoneyStore.setPurchasePrice(data.purchasePrice);
+          changeMoneyStore.setSalePrice(data.sale_price);
+          changeMoneyStore.setPurchasePrice(data.purchase_price);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   } catch (error) {
     console.log(error);
   }
