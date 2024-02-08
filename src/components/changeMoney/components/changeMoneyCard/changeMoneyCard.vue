@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CardHeader from "@/components/changeMoney/components/changeMoneyCard/CardHeader.vue";
+import CardHeader from "@/components/changeMoney/components/changeMoneyCard/cardHeader.vue";
 import CardContent from "@/components/changeMoney/components/changeMoneyCard/cardContent.vue";
 </script>
 

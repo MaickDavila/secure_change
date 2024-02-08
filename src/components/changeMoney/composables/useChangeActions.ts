@@ -31,9 +31,10 @@ export default function useChangeAction() {
 
     if (action === EChangeAction.PURCHASE) {
       changeFormStore.setAction(EChangeAction.SALE);
-    } else {
-      get_action.value = EChangeAction.PURCHASE;
+      return;
     }
+
+    get_action.value = EChangeAction.PURCHASE;
   }
 
   return {

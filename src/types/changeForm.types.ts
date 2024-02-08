@@ -1,8 +1,3 @@
-export enum ECurrency {
-  USD = "USD",
-  PEN = "PEN",
-}
-
 export enum EChangeAction {
   PURCHASE = "PURCHASE",
   SALE = "SALE",

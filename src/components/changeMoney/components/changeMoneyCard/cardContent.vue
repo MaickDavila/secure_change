@@ -15,9 +15,11 @@ const {
   receiveLabelText,
   getSendSimbol,
   getReceiveSimbol,
+  changeAction,
 } = useChangeAction();
 
 const { spin, spinBack } = useAnimationButton();
+const { onlyNumbers } = useInput();
 
 const get_purchase_price = computed(() =>
   changeMoneyStore.get_purchase_price()
@@ -66,12 +68,12 @@ watch(get_action, () => {
 
               <input
                 type="text"
-                class="text-end custom-input"
+                class="custom-input"
                 placeholder="0.00"
                 autofocus
                 :maxlength="6"
                 v-model="sendValue"
-                @keypress="useInput().onlyNumbers($event)"
+                @keypress="onlyNumbers($event)"
                 @input="setPurchaseChangeMoney"
               />
             </div>
@@ -87,7 +89,7 @@ watch(get_action, () => {
             class="change-button"
             @mouseover="spin"
             @mouseleave="spinBack"
-            @click="useChangeAction().changeAction()"
+            @click="changeAction()"
           />
         </div>
 
@@ -107,11 +109,11 @@ watch(get_action, () => {
 
               <input
                 type="text"
-                class="text-end custom-input"
+                class="custom-input"
                 placeholder="0.00"
                 autofocus
                 :maxlength="6"
-                @keypress="useInput().onlyNumbers($event)"
+                @keypress="onlyNumbers($event)"
                 v-model="receiveValue"
                 @input="setReceiveChangeMoney"
               />
@@ -133,7 +135,7 @@ watch(get_action, () => {
 }
 
 .custom-input {
-  @apply w-full h-full border-none bg-transparent z-50 !important;
+  @apply w-full h-full border-none bg-transparent z-50 text-end !important;
 
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {

@@ -5,6 +5,7 @@ import { onMounted } from "vue";
 import { getRatesTest } from "@/components/changeMoney/actions/getRates.ts";
 
 onMounted(async () => {
+  // await getRates();
   await getRatesTest();
 });
 </script>
