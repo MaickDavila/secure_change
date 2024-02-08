@@ -1,18 +1,44 @@
-# Vue 3 + TypeScript + Vite
+# SecureChange
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Este proyecto es un sistema de compra y venta de dolares, con el fin de que los usuarios puedan realizar transacciones
+de manera segura y rápida.
 
-## Recommended IDE Setup
+## Instalación
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Para la instalación del proyecto, sigue los siguientes pasos:
 
-## Type Support For `.vue` Imports in TS
+1. Clona el repositorio: `git clone https://github.com/MaickDavila/secure_change`
+2. Navega al directorio del proyecto: `cd proyecto`
+3. Instala las dependencias: `npm install`
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Configuración
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+Se debe configurar el .env con las siguientes variables de entorno:
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+````
+VITE_APP_FIREBASE_APIKEY=
+VITE_APP_FIREBASE_AUTHDOMAIN=
+VITE_APP_FIREBASE_PROJECTID=
+VITE_APP_FIREBASE_STORAGEBUCKET=
+VITE_APP_FIREBASE_MESSAGINGSENDERID=
+VITE_APP_FIREBASE_APPID=
+````
+
+## Uso
+
+Para utilizar el proyecto, sigue los siguientes pasos:
+
+- Para iniciar el servidor de desarrollo: `npm run dev`
+- Para construir el proyecto: `npm run build`
+- Para ejecutar las pruebas: `npm run test`
+
+## Características
+
+- Te da en tiempo real el valor del dolar en soles.
+- Te permite comprar dólares.
+- Te permite vender dólares.
+
+## Contribución
+
+Este proyecto es parte de un proceso de selección, para demostrar habilidades en el desarrollo de software del lado del
+frontend con Vuejs3.
