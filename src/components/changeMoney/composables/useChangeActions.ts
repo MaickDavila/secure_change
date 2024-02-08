@@ -2,7 +2,7 @@ import { computed } from "vue";
 import { EChangeAction } from "@/types/changeForm.types.js";
 import changeFormStore from "@/components/changeMoney/changeMoney.store.js";
 
-export function useChangeAction() {
+export default function useChangeAction() {
   const get_action = computed({
     get: () => changeFormStore.get_action(),
     set: (value: EChangeAction) => changeFormStore.setAction(value),

@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import useInput from "@/composables/useInput.ts";
-import { useChangeAction } from "@/components/changeMoney/composables/useChangeActions.ts";
+import useChangeAction from "@/components/changeMoney/composables/useChangeActions.ts";
 import reloadSvg from "@/assets/svgs/reload.svg";
 import { computed, ref, watch } from "vue";
 import changeMoneyStore from "@/components/changeMoney/changeMoney.store.ts";
 import { EChangeAction } from "@/types/changeForm.types.ts";
+import useAnimationButton from "../../composables/useAnimationButton.ts";
 
 const sendValue = ref();
 const receiveValue = ref();
@@ -16,20 +17,13 @@ const {
   getReceiveSimbol,
 } = useChangeAction();
 
+const { spin, spinBack } = useAnimationButton();
+
 const get_purchase_price = computed(() =>
   changeMoneyStore.get_purchase_price()
 );
 
 const get_sale_price = computed(() => changeMoneyStore.get_sale_price());
-
-const spin = () => applyAnimation("spin");
-const spinBack = () => applyAnimation("spinBack");
-
-function applyAnimation(animationName: string) {
-  const button = document.querySelector(".change-button") as HTMLImageElement;
-  if (!button) return;
-  button.style.animation = `${animationName} 0.3s linear`;
-}
 
 function setPurchaseChangeMoney() {
   const send = Number(sendValue.value) || 0;

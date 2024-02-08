@@ -2,7 +2,7 @@
 import { EChangeAction } from "@/types/changeForm.types.js";
 import { computed } from "vue";
 import changeFormStore from "@/components/changeMoney/changeMoney.store.js";
-import { useChangeAction } from "@/components/changeMoney/composables/useChangeActions.ts";
+import useChangeAction from "@/components/changeMoney/composables/useChangeActions.ts";
 
 const get_purchase_price = computed(() => changeFormStore.get_purchase_price());
 const get_sale_price = computed(() => changeFormStore.get_sale_price());
