@@ -14,7 +14,7 @@ https://65c4e83e73d8f2126159149d--resonant-starship-b869bb.netlify.app/
 Para la instalación del proyecto, sigue los siguientes pasos:
 
 1. Clona el repositorio: `git clone https://github.com/MaickDavila/secure_change`
-2. Navega al directorio del proyecto: `cd proyecto`
+2. Navega al directorio del proyecto: `cd secure_change`
 3. Instala las dependencias: `npm install`
 
 ## Configuración
