@@ -1,10 +1,15 @@
 export enum ECurrency {
-    USD = 'USD',
-    PEN = 'PEN',
+  USD = "USD",
+  PEN = "PEN",
 }
 
-export  interface IChangeFormStore {
-    current_currency: ECurrency;
-    purchase_price: number;
-    sale_price: number;
+export enum EChangeAction {
+  PURCHASE = "PURCHASE",
+  SALE = "SALE",
+}
+
+export interface IChangeFormStore {
+  action: EChangeAction;
+  purchase_price: number;
+  sale_price: number;
 }
