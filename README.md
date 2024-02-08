@@ -3,6 +3,10 @@
 Este proyecto es un sistema de compra y venta de dolares, con el fin de que los usuarios puedan realizar transacciones
 de manera segura y rápida.
 
+[//]: # (Image References)
+
+![mobileScreenshot](./src/assets/images/mobileScreenshot.png)
+
 ## Instalación
 
 Para la instalación del proyecto, sigue los siguientes pasos:
